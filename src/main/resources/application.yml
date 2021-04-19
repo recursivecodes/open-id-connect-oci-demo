@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: openIdConnectOciDemo
+  security:
+    authentication: session
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET}"'
+    oauth2:
+      clients:
+        oci:
+          client-id: ${OAUTH_CLIENT_ID}
+          client-secret: ${OAUTH_CLIENT_SECRET}
+          openid:
+            issuer: ${OAUTH_ISSUER}
+      callback-uri: /oauth/callback/oci
