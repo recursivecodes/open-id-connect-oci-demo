@@ -6,7 +6,7 @@
 <body>
 <h1>Micronaut - OCI IDCS Example</h1>
 
-<h2 th:if="${security}">Username: <span th:text="${security.attributes.get('email')}"></span></h2>
+<h2 th:if="${security}">Username: <span th:text="${security.attributes.get('user_displayname')}"></span></h2>
 <h2 th:unless="${security}">Username: Anonymous</h2>
 
 <nav>
